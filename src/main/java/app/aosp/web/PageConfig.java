@@ -49,7 +49,7 @@ public class PageConfig {
                 long t1 = nameToNumber(o1.getFileName().toString());
                 long t2 = nameToNumber(o2.getFileName().toString());
                 return (int) (t2 - t1);
-            }).filter(path -> path.startsWith("android-")).map(path -> {
+            }).filter(path -> path.getFileName().toString().startsWith("android-")).map(path -> {
                 IndexEntry entry = new IndexEntry();
                 entry.setName(path.getFileName().toString());
                 entry.setPath(path.getFileName().toString());
